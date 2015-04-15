@@ -1,0 +1,63 @@
+// Font Sizes
+
+@font-size-xs:       12px;
+@font-size-sm:       14px;
+@font-size-bd:       15px;
+@font-size-md:       24px;
+@font-size-lg:       32px;
+@font-size-xl:       48px;
+
+// Font Families
+
+@font-fam-titles:    "futura-pt",sans-serif;
+@font-fam-subtitle:  "futura-pt",sans-serif;
+@font-fam-body:      "futura-pt",sans-serif;
+@font-fam-buttons:   "futura-pt",sans-serif;
+@font-fam-primary:   "futura-pt",sans-serif;
+@font-fam-secondary: "futura-pt",sans-serif;
+
+// Font Setup
+
+body {
+  font-family: @font-fam-body;
+}
+
+.type-title {
+
+  font-family: @font-fam-titles;
+
+  @media @mobile {
+    font-size: @font-size-md;
+  }
+
+  @media @tablet {
+    font-size: @font-size-lg;
+  }
+
+  @media @desktop {
+    font-size: @font-size-xl;
+  }
+
+  @media @max {
+    font-size: @font-size-xl;
+  }
+
+}
+
+.type-subtitle {
+  font-size: @font-size-md;
+  font-family: @font-fam-subtitle;
+}
+
+.button, .btn {
+  font-size: @font-size-xs;
+  font-family: @font-fam-buttons;
+}
+
+.main-nav {
+  font-size: @font-size-bd;
+  font-family: @font-fam-buttons;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
