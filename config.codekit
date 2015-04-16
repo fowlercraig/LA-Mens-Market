@@ -1925,7 +1925,7 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/bower_components\/formstone\/src\/less\/carousel.less",
 		"outputAbbreviatedPath": "\/assets\/bower_components\/formstone\/src\/css\/carousel.css",
@@ -13864,17 +13864,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/assets\/vid\/video-poster.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1.88431e+06,
-		"inputAbbreviatedPath": "\/assets\/vid\/video-poster.jpg",
-		"outputAbbreviatedPath": "\/assets\/vid\/video-poster.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/attachment.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -15150,6 +15139,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/lib\/advanced-custom-fields-pro\/core\/media.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/advanced-custom-fields-pro\/core\/media.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/lib\/advanced-custom-fields-pro\/core\/revisions.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -15456,15 +15454,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/lib\/advanced-custom-fields-pro\/pro\/admin\/connect.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/advanced-custom-fields-pro\/pro\/admin\/connect.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/lib\/advanced-custom-fields-pro\/pro\/admin\/options-page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -15580,6 +15569,15 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/advanced-custom-fields-pro\/pro\/core\/updates.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/advanced-custom-fields-pro\/pro\/core\/updates.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/lib\/advanced-custom-fields-pro\/pro\/fields\/flexible-content.php": {
 		"fileType": 8192,
@@ -16072,7 +16070,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "\/assets",
-	"displayValue": "LA Mens Market",
+	"displayValue": "GreenRecs Final",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},
@@ -16219,7 +16217,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/lamensmarket.dev",
+	"externalServerAddress": "http:\/\/greenrecs.wag.dev",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
