@@ -8,7 +8,8 @@ html {
   color: @white;
   height: 100%;
 
-  .wrapper, #splsah--wrapper {
+  .wrapper, .wrapper > div {
+    min-height: 100%;
     height: 100%;
     position: relative;
   }
@@ -22,15 +23,15 @@ html {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
+    line-height: 80px;
     z-index: 99;
 
     nav {
       a {
 
         @media @mobile {
-          font-size: 9px;
+          .font_size(16);
           letter-spacing: 1px;
           font-weight: 200;
           padding: 0 3px;
@@ -39,11 +40,10 @@ html {
 
         @media @tablet {
 
-        font-weight: 600;
+        font-weight: 300;
         padding: 0 10px;
-        border-right: 1px solid @white25;
-        letter-spacing: 2px;
-        font-size: @font-size-xs;
+        letter-spacing: 4px;
+        .font_size(18);
         color: @white50;
 
         }
@@ -75,6 +75,7 @@ html {
 
   #splash--video {
     .cover();
+    position: fixed;
     z-index: 49;
     background-size: cover;
     video {
@@ -401,4 +402,67 @@ html {
   .quote {
     padding: 0 25px;
   }
+}
+
+#brands--wrapper {
+
+  background: rgba(0,0,0,.9);
+  padding-top: @spaced*3;
+  position: relative;
+  z-index: 50;
+
+  h2 {
+    color: @white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid @white;
+    display: inline-block;
+    margin-bottom: @spaced;
+  }
+
+  #brand-list {
+
+    .brand {
+
+      @media @mobile {
+        .font_size(24);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      a {
+
+        display: block;
+        height: 100px;
+        line-height: 100px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        transition: 100ms ease;
+        position: relative;
+        color: @white75;
+
+        &:before {
+          .center();
+          left: auto;
+          right: 0;
+          transform: translate(-25%, -50%);
+          margin-top: 4px;
+          opacity: 0;
+          color: @white50;
+        }
+
+        &:hover {
+          color: @white;
+          &:before {
+            opacity: 1;
+          }
+        }
+
+
+
+      }
+
+    }
+
+  }
+
 }
