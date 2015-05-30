@@ -95,29 +95,17 @@ class acf_field_select extends acf_field {
 		
 		// vars
 		$r = array();
-		$s = false;
 		
 		
-		// search
-		if( $options['s'] !== '' ) {
-			
-			// search may be integer
-			$s = strval($options['s']);
-			
-			
-			// strip slashes
-			$s = wp_unslash($s);
-			
-		}		
+		// strip slashes
+		$options['s'] = wp_unslash($options['s']);
 		
-		
-		// loop through choices
 		if( !empty($field['choices']) ) {
 		
 			foreach( $field['choices'] as $k => $v ) {
 				
-				// if searching, but doesn't exist
-				if( $s !== false && stripos($v, $s) === false ) {
+				// search
+				if( $options['s'] && stripos($v, $options['s']) === false ) {
 				
 					continue;
 					
@@ -129,9 +117,7 @@ class acf_field_select extends acf_field {
 					'id'	=> $k,
 					'text'	=> strval( $v )
 				);
-				
 			}
-			
 		}
 		
 		

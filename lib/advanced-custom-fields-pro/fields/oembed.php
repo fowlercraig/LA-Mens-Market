@@ -250,7 +250,6 @@ class acf_field_oembed extends acf_field {
 			'label'			=> __('Embed Size','acf'),
 			'type'			=> 'text',
 			'name'			=> 'width',
-			'prepend'		=> __('Width', 'acf'),
 			'append'		=> 'px',
 			'placeholder'	=> $this->default_values['width']
 		));
@@ -261,12 +260,8 @@ class acf_field_oembed extends acf_field {
 			'label'			=> __('Embed Size','acf'),
 			'type'			=> 'text',
 			'name'			=> 'height',
-			'prepend'		=> __('Height', 'acf'),
 			'append'		=> 'px',
-			'placeholder'	=> $this->default_values['height'],
-			'wrapper'		=> array(
-				'data-append' => 'width'
-			)
+			'placeholder'	=> $this->default_values['height']
 		));
 		
 	}

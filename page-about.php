@@ -1,6 +1,6 @@
 <?php Themewrangler::setup_page();get_header('splash'/***Template Name: About */); ?>
 
-<!--<META http-equiv="refresh" content="0;URL=/">-->
+<META http-equiv="refresh" content="0;URL=/">
 <section id="about">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <div id="content" class="fs-grid fullscreen">

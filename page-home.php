@@ -16,8 +16,6 @@
     <?php echo do_shortcode('[epm_mailchimp]' ); ?>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 <div id="splash--video-overlay"></div>
 <div id="splash--video" class="fullscreen cover" style="opacity:0"></div>
 <!--
@@ -44,6 +42,5 @@
   }
   });
 </script>
->>>>>>> parent of 71bbccd... Thingies
 
 <?php get_footer(); ?>

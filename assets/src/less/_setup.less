@@ -7,16 +7,21 @@
 @desktop: ~"screen and (min-width: 980px)";
 @max:   ~"screen and (min-width: 1220px)";
 
+@mobileC: ~"screen and (min-width: 0px) and (max-width: 499px)";
+@tabletC: ~"screen and (min-width: 500px) and (max-width: 768px)";
+@desktopC:  ~"screen and (min-width: 769px) and (max-width: 979px)";
+@maxC:    ~"screen and (min-width: 980px) and (max-width: 1279px)";
+@superMax:    ~"screen and (min-width: 1280px) and (max-width: 99999px)";
+
 // Colors
 
-@textGray: #58595B;
+@textGray: #7D7D8E;
 @bgGray: #f8f8f8;
 @lighterGray: #E7E7EC;
 @lightGray: #CBCBD2;
 
 @yellow: #FED406;
-@green: #227D52;
-@darkgreen: #0A693A;
+@green: #51A74E;
 @blue: #1CA4DE;
 @brown: #9E6927;
 
@@ -39,15 +44,6 @@
 @white: #fff;
 
 @spaced: 25px;
-
-.bg {
-  &.green {
-    background: @green;
-  }
-  &.lightgray {
-    background: @lightestGray;
-  }
-}
 
 // Mixins
 
