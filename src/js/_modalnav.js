@@ -9,7 +9,10 @@ function navIn(){
       },300);
       d += 200;
   });
-  $("#splash--wrapper").transition({scale: .95});
+
+    $("#splash--wrapper").delay(300).addClass('blurred');
+
+
 }
 
 function navOut(){
@@ -21,7 +24,9 @@ function navOut(){
       },300);
       d += 200;
   });
-  $("#splash--wrapper").transition({scale: 1});
+    $("#splash--wrapper").removeClass('blurred');;
+
+
 }
 
 var $menu = $(".toggle");

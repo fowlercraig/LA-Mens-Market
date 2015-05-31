@@ -3338,7 +3338,6 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.75);
   padding-top: 30px;
   -webkit-transition: 300ms ease;
           transition: 300ms ease;
@@ -3429,6 +3428,10 @@ html {
           transform: translate(-50%, -50%);
   z-index: 99;
 }
+.splash #splash--wrapper.blurred #splash--meta {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
 .splash #splash--video-overlay {
   height: 100%;
   left: 0;
@@ -3483,6 +3486,10 @@ html {
   .splash #splash--video video {
     display: block;
   }
+}
+.splash #splash--meta {
+  -webkit-transition: 300ms ease;
+          transition: 300ms ease;
 }
 @media screen and (min-width: 300px) {
   .splash #splash--meta {

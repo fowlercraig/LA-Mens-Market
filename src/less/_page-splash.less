@@ -67,6 +67,14 @@ body,html {
     z-index: 99
   }
 
+  #splash--wrapper {
+    &.blurred {
+      #splash--meta {
+        filter: blur(10px);
+      }
+    }
+  }
+
   #splash--video-overlay {
     .cover();
     z-index: 50;
@@ -115,6 +123,7 @@ body,html {
 
   #splash--meta {
 
+    transition: 300ms ease;
 
     @media @mobile {
       width: 100%;
