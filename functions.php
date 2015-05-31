@@ -46,7 +46,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 $settings = array(
 
   'available_scripts' => array(
-    'jquery-g'          => array('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js','1.11.1'),
+    'jquery-g'          => array('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js','1.11.2'),
     'scripts'           => array('/assets/js/scripts.min.js'),
     'plugins'           => array('/assets/js/plugins.min.js'),
     'jqueryui'          => array('//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js'),
@@ -84,6 +84,6 @@ Themewrangler::set_defaults( $settings );
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null);
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 }

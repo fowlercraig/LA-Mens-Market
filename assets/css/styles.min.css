@@ -3341,6 +3341,7 @@ body {
   padding-top: 30px;
   -webkit-transition: 300ms ease;
           transition: 300ms ease;
+  z-index: 999;
 }
 #modal-nav nav a {
   display: block;
@@ -3348,24 +3349,21 @@ body {
   font-size: 3rem;
   letter-spacing: 1px;
   font-weight: 200;
-  opacity: 0;
+  opacity: 1;
   line-height: 1;
 }
 #modal-nav nav.fs-swap-active a {
   color: red;
 }
-#modal-nav.fs-swap-enabled {
-  z-index: 51;
+#modal-nav.nav-target {
+  z-index: 9999;
   background: none;
 }
-#modal-nav.fs-swap-enabled nav {
-  pointer-events: none;
-}
-#modal-nav.fs-swap-enabled.fs-swap-active {
+#modal-nav.nav-target.fs-swap-active {
   z-index: 999;
   background: rgba(0, 0, 0, 0.75);
 }
-#modal-nav.fs-swap-enabled.fs-swap-active nav {
+#modal-nav.nav-target.fs-swap-active nav {
   pointer-events: auto;
 }
 body,

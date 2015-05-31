@@ -206,7 +206,7 @@
 		Request = $.ajax({
 			url: cleanURL,
 			data: data,
-			dataType: "html",
+			dataType: "json",
 			cache: Instance.cache,
 			xhr: function() {
 				// custom xhr

@@ -14,10 +14,10 @@
   <div id="splash--video" class="fullscreen cover" style="opacity:0"></div>
   <div id="splash--added" class="added-content">
     <a class="close toggle nav-link" href="#" data-swap-target=".added-content">Close</a>
-    <div id="content"></div>
+    <div id="content" class="m-scene" style="color:#000">yolo</div>
   </div>
 
-  <?php include locate_template('parts/mailchimp.php' ); ?>
+  <?php // include locate_template('parts/mailchimp.php' ); ?>
 
 </div>
 

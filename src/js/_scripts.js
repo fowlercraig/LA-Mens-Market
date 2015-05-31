@@ -1,4 +1,3 @@
-// @codekit-prepend "_modalnav.js"
 // @codekit-prepend "_pronto.js"
 
 $(function(){
