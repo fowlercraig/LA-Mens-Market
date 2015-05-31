@@ -13,6 +13,7 @@ include_once locate_template('/lib/soil-master/soil.php' );
 include_once locate_template('/lib/roots-rewrites-master/roots-rewrites.php' );
 include_once locate_template('/lib/opengraph/opengraph.php' );
 include_once locate_template('/lib/config.php' );
+include_once locate_template('/lib/ajax.php' );
 
 add_filter('acf/settings/path', 'my_acf_settings_path');
 function my_acf_settings_path( $path ) {
@@ -47,6 +48,7 @@ $settings = array(
   'available_scripts' => array(
     'jquery-g'          => array('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js','1.11.1'),
     'scripts'           => array('/assets/js/scripts.min.js'),
+    'plugins'           => array('/assets/js/plugins.min.js'),
     'jqueryui'          => array('//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js'),
     'videojs'           => array('//vjs.zencdn.net/4.3/video.js'),
     ),
@@ -54,6 +56,7 @@ $settings = array(
   'default_scripts'   => array(
     'jqueryui',
     'videojs',
+    'plugins',
     'scripts',
     ),
 

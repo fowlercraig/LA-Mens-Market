@@ -1,0 +1,56 @@
+#modal-nav {
+
+  .cover();
+  background: @black75;
+  padding-top: 30px;
+  transition: 300ms ease;
+
+  nav {
+
+    a {
+
+      display: block;
+      .font_size(48);
+      letter-spacing: 1px;
+      font-weight: 200;
+      opacity: 0;
+      line-height: 1;
+
+    }
+
+    &.fs-swap-active {
+
+      a {
+
+        color: red;
+      }
+
+    }
+
+  }
+
+  &.fs-swap-enabled {
+
+    z-index: 51;
+
+    background: none;
+    nav {
+      //opacity: 0;
+      pointer-events: none;
+    }
+
+    &.fs-swap-active {
+
+      z-index: 999;
+      background: @black75;
+      nav {
+        //opacity: 1;
+        pointer-events: auto;
+      }
+
+    }
+
+  }
+
+
+}

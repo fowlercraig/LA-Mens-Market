@@ -13,9 +13,6 @@
 // Other Plugins
 
 // @codekit-prepend "../bower_components/components-modernizr/modernizr.js"
+// @codekit-prepend "../bower_components/jquery.transit/jquery.transit.js"
 // @codekit-prepend "../bower_components/BigVideo.js/lib/bigvideo.js"
 // @codekit-prepend "../bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"
-
-// My Shit
-
-// @codekit-append "_scripts.js"

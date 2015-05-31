@@ -1,0 +1,30 @@
+#menuBtn {
+
+  @btnHeight: 2px;
+  @btnMargin: 5px;
+  width: 30px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+
+  > span {
+
+    display: block;
+    height: (@btnHeight+@btnMargin)*3;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    span {
+      background: @lightGray;
+      width: 100%;
+      text-indent: -9999px;
+      display: block;
+      height: @btnHeight;
+      margin-bottom: @btnMargin;
+    }
+
+  }
+
+}

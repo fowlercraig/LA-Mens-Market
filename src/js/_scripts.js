@@ -1,3 +1,5 @@
+// @codekit-prepend "_modalnav.js"
+
 $(function(){
 
   function about(){
