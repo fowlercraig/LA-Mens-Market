@@ -2,8 +2,8 @@
 /*
 Plugin Name: Advanced Custom Fields Pro
 Plugin URI: http://www.advancedcustomfields.com/
-Description: Customise WordPress with powerful, professional and intuitive fields
-Version: 5.2.2
+Description: Fully customise WordPress edit screens with powerful fields. Boasting a professional interface and a powerful API, it’s a must have for any web developer working with WordPress. Field types include: Wysiwyg, text, textarea, image, file, select, checkbox, page link, post object, date picker, color picker, repeater, flexible content, gallery and more!
+Version: 5.1.8
 Author: elliot condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -61,7 +61,7 @@ class acf {
 			
 			// basic
 			'name'				=> __('Advanced Custom Fields', 'acf'),
-			'version'			=> '5.2.2',
+			'version'			=> '5.1.8',
 						
 			// urls
 			'basename'			=> plugin_basename( __FILE__ ),
@@ -70,15 +70,13 @@ class acf {
 			
 			// options
 			'show_admin'		=> true,
-			'show_updates'		=> true,
 			'stripslashes'		=> false,
 			'local'				=> true,
 			'json'				=> true,
 			'save_json'			=> '',
 			'load_json'			=> array(),
 			'default_language'	=> '',
-			'current_language'	=> '',
-			'capability'		=> 'manage_options'
+			'current_language'	=> ''
 		);
 		
 		
@@ -104,7 +102,6 @@ class acf {
 		acf_include('core/json.php');
 		acf_include('core/local.php');
 		acf_include('core/location.php');
-		acf_include('core/media.php');
 		acf_include('core/revisions.php');
 		acf_include('core/compatibility.php');
 		acf_include('core/third_party.php');
@@ -242,14 +239,10 @@ class acf {
 		$this->complete();
 		
 		
-		// vars
-		$cap = acf_get_setting('capability');
-		
-		
 		// Create post type 'acf-field-group'
 		register_post_type( 'acf-field-group', array(
 			'labels'			=> array(
-			    'name'					=> __( 'Field Groups', 'acf' ),
+			    'name'					=> __( 'Field&nbsp;Groups', 'acf' ),
 				'singular_name'			=> __( 'Field Group', 'acf' ),
 			    'add_new'				=> __( 'Add New' , 'acf' ),
 			    'add_new_item'			=> __( 'Add New Field Group' , 'acf' ),
@@ -263,17 +256,11 @@ class acf {
 			'public'			=> false,
 			'show_ui'			=> true,
 			'_builtin'			=> false,
-			'capability_type'	=> 'post',
-			'capabilities'		=> array(
-				'edit_post'			=> $cap,
-				'delete_post'		=> $cap,
-				'edit_posts'		=> $cap,
-				'delete_posts'		=> $cap,
-			),
+			'capability_type'	=> 'page',
 			'hierarchical'		=> true,
 			'rewrite'			=> false,
 			'query_var'			=> false,
-			'supports' 			=> array('title'),
+			'supports' 			=> array( 'title' ),
 			'show_in_menu'		=> false,
 		));
 		
@@ -295,17 +282,11 @@ class acf {
 			'public'			=> false,
 			'show_ui'			=> false,
 			'_builtin'			=> false,
-			'capability_type'	=> 'post',
-			'capabilities'		=> array(
-				'edit_post'			=> $cap,
-				'delete_post'		=> $cap,
-				'edit_posts'		=> $cap,
-				'delete_posts'		=> $cap,
-			),
+			'capability_type'	=> 'page',
 			'hierarchical'		=> true,
 			'rewrite'			=> false,
 			'query_var'			=> false,
-			'supports' 			=> array('title'),
+			'supports' 			=> array( 'title' ),
 			'show_in_menu'		=> false,
 		));
 		

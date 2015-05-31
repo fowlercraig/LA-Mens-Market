@@ -17,8 +17,11 @@ class acf_compatibility {
 	
 	function __construct() {
 		
-		// fields
+		// all field
 		add_filter('acf/get_valid_field',					array($this, 'get_valid_field'), 20, 1);
+		
+		
+		// specific fields
 		add_filter('acf/get_valid_field/type=textarea',		array($this, 'get_valid_textarea_field'), 20, 1);
 		add_filter('acf/get_valid_field/type=relationship',	array($this, 'get_valid_relationship_field'), 20, 1);
 		add_filter('acf/get_valid_field/type=post_object',	array($this, 'get_valid_relationship_field'), 20, 1);
@@ -29,7 +32,7 @@ class acf_compatibility {
 		add_filter('acf/get_valid_field/type=date_picker',	array($this, 'get_valid_date_picker_field'), 20, 1);
 		
 		
-		// field groups
+		// all field groups
 		add_filter('acf/get_valid_field_group',				array($this, 'get_valid_field_group'), 20, 1);
 		
 		
@@ -334,81 +337,76 @@ class acf_compatibility {
 	
 	function get_valid_field_group( $field_group ) {
 		
-		// global
-		global $wpdb;
-		
-		
-		// vars
-		$v = 5;
-		
-		
-		// add missing 'key' (v5.0.0)
-		if( empty($field_group['key']) ) {
+		// bail ealry if field group contains key ( is ACF5 )
+		if( !empty($field_group['key']) ) {
 			
-			// update version
-			$v = 4;
-			
-			
-			// add missing key
-			$field_group['key'] = empty($field_group['id']) ? uniqid('group_') : 'group_' . $field_group['id'];
+			return $field_group;
 			
 		}
 		
 		
-		// extract options (v5.0.0)
+		// global
+		global $wpdb;
+		
+		
+		// add missing key
+		$field_group['key'] = empty($field_group['id']) ? uniqid('group_') : 'group_' . $field_group['id'];
+		
+		// extract options
 		if( !empty($field_group['options']) ) {
 			
 			$options = acf_extract_var($field_group, 'options');
+			
 			$field_group = array_merge($field_group, $options);
 			
 		}
 		
 		
-		// location rules changed to groups (v5.0.0)
-		if( !empty($field_group['location']['rules']) ) {
+		// some location rules have changed
+		if( !empty($field_group['location']) ) {
 			
-			// extract location
-			$location = acf_extract_var( $field_group, 'location' );
-			
-			
-			// reset location
-			$field_group['location'] = array();
-			
-			
-			// vars
-			$group = 0;
-	 		$all_or_any = $location['allorany'];
-	 		
-	 		
-	 		// loop over rules
-	 		if( !empty($location['rules']) ) {
+			// location rules changed to groups
+			if( isset($field_group['location']['rules']) ) {
+				
+				// extract location
+				$location = acf_extract_var( $field_group, 'location' );
+				
+				
+				// reset location
+				$field_group['location'] = array();
+				
+				
+				// vars
+				$group = 0;
+		 		$all_or_any = $location['allorany'];
 		 		
-		 		foreach( $location['rules'] as $rule ) {
+		 		
+		 		// loop over rules
+		 		if( !empty($location['rules']) ) {
 			 		
-				 	// sperate groups?
-				 	if( $all_or_any == 'any' ) {
-				 	
-					 	$group++;
+			 		foreach( $location['rules'] as $rule ) {
+				 		
+					 	// sperate groups?
+					 	if( $all_or_any == 'any' ) {
 					 	
+						 	$group++;
+						 	
+					 	}
+					 	
+					 	
+					 	// add to group
+					 	$field_group['location'][ $group ][] = $rule;
+			 	
 				 	}
 				 	
-				 	
-				 	// add to group
-				 	$field_group['location'][ $group ][] = $rule;
-		 	
-			 	}
+		 		}
 			 	
-	 		}
-		 	
-		 	
-		 	// reset keys
-			$field_group['location'] = array_values($field_group['location']);
-		 	
-		}
-		
-		
-		// some location rules have changed (v5.0.0)
-		if( !empty($field_group['location']) ) {
+			 	
+			 	// reset keys
+				$field_group['location'] = array_values($field_group['location']);
+			 	
+			}
+			
 			
 			// param changes
 		 	$param_replace = array(
@@ -416,16 +414,7 @@ class acf_compatibility {
 		 		'ef_media'		=> 'attachment',
 		 		'ef_taxonomy'	=> 'taxonomy',
 		 		'ef_user'		=> 'user_role',
-		 		'user_type'		=> 'current_user_role' // 5.2.0
 		 	);
-		 	
-		 	
-		 	// remove conflicting param
-		 	if( $v == 5 ) {
-			 	
-			 	unset($param_replace['taxonomy']);
-			 	
-		 	}
 		 	
 		 	
 			// loop over location groups
@@ -471,8 +460,10 @@ class acf_compatibility {
 						 	$rule['value'] = "{$term->taxonomy}:{$term->slug}";
 						 	
 					 	}
+					 	// if
 					 	
 				 	}
+				 	// if
 				 	
 				 	
 				 	// append rule
@@ -492,7 +483,7 @@ class acf_compatibility {
 		// if
 		
 		
-		// change layout to style (v5.0.0)
+		// change layout to style
 		if( !empty($field_group['layout']) ) {
 		
 			$field_group['style'] = acf_extract_var($field_group, 'layout');
@@ -500,8 +491,8 @@ class acf_compatibility {
 		}
 		
 		
-		// change no_box to seamless (v5.0.0)
-		if( $field_group['style'] === 'no_box' ) {
+		// change no_box to seamless
+		if( $field_group['style'] == 'no_box' ) {
 		
 			$field_group['style'] = 'seamless';
 			
@@ -510,7 +501,6 @@ class acf_compatibility {
 		
 		//return
 		return $field_group;
-		
 	}
 	
 }

@@ -1,0 +1,58 @@
+#modal-nav {
+
+  .cover();
+  //background: @black25;
+  padding-top: 30px;
+  transition: 300ms ease;
+  z-index: 999;
+
+  nav {
+
+    a {
+
+      display: block;
+      .font_size(48);
+      letter-spacing: 1px;
+      font-weight: 200;
+      opacity: 1;
+      line-height: 1;
+
+    }
+
+    &.fs-swap-active {
+
+      a {
+
+        color: red;
+      }
+
+    }
+
+  }
+
+  //&.fs-swap-enabled {
+  &.nav-target {
+
+    z-index: 9999;
+
+    background: none;
+    nav {
+      //opacity: 0;
+      //pointer-events: none;
+    }
+
+    &.fs-swap-active {
+
+      z-index: 999;
+      background: @black75;
+      nav {
+        //opacity: 1;
+        pointer-events: auto;
+      }
+
+    }
+
+  }
+
+
+}

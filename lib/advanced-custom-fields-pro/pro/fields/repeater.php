@@ -215,7 +215,7 @@ class acf_field_repeater extends acf_field {
 		<thead>
 			<tr>
 				<?php if( $show_order ): ?>
-					<th class="order"><span class="order-spacer"></span></th>
+					<th class="order"></th>
 				<?php endif; ?>
 				
 				<?php foreach( $field['sub_fields'] as $sub_field ): 
@@ -245,7 +245,7 @@ class acf_field_repeater extends acf_field {
 				<?php endforeach; ?>
 
 				<?php if( $show_remove ): ?>
-					<th class="remove"><span class="remove-spacer"></span></th>
+					<th class="remove"></th>
 				<?php endif; ?>
 			</tr>
 		</thead>

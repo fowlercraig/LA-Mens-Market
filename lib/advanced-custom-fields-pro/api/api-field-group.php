@@ -988,11 +988,6 @@ function acf_import_field_group( $field_group ) {
 	// remove old fields
 	if( $field_group['ID'] ) {
 		
-		// disable local - important as to avoid 'acf_get_fields_by_id' returning fields with ID = 0
-		acf_disable_local();
-	
-		
-		// load fields
 		$db_fields = acf_get_fields_by_id( $field_group['ID'] );
 		$db_fields = acf_prepare_fields_for_import( $db_fields );
 		
@@ -1021,13 +1016,9 @@ function acf_import_field_group( $field_group ) {
 			
 		}
 		
-		
-		// enable local - important as to allow local to find new fields and save json file
-		acf_enable_local();
-		
 	}
+		
 	
-			
 	// save field group
 	$field_group = acf_update_field_group( $field_group );
 	

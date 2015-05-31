@@ -1892,6 +1892,30 @@
 .fs-carousel-enabled .fs-carousel-page.fs-carousel-active {
   opacity: 1;
 }
+/**
+	 * @class
+	 * @name .fs-switch-element
+	 * @type element
+	 * @description Target Element
+	 */
+/**
+	 * @class
+	 * @name .fs-switch-target
+	 * @type element
+	 * @description Toggled element
+	 */
+/**
+	 * @class
+	 * @name .fs-switch-enabled
+	 * @type modifier
+	 * @description Indicates enabled state
+	 */
+/**
+	 * @class
+	 * @name .fs-switch-active
+	 * @type modifier
+	 * @description Indicates active state
+	 */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -2318,7 +2342,7 @@ th {
   left: 0;
   height: 16px;
   width: 16px;
-  background-image: url('../bower_components/BigVideo.js/css/bigvideo.png');
+  background-image: url('bigvideo.png');
 }
 #big-video-control-timer {
   position: absolute;
@@ -2870,7 +2894,7 @@ body {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   background: #ffffff;
-  color: #58595b;
+  color: #7d7d8e;
   line-height: 1.5;
   overflow-x: hidden;
 }
@@ -2906,14 +2930,14 @@ h5 small,
 h6 small {
   font-size: 80%;
   font-weight: 400;
-  color: #58595b;
+  color: #7d7d8e;
 }
 h1 {
   font-size: 50px;
   font-size: 3.125rem;
   line-height: 1;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h1 {
     font-size: 24px;
   }
@@ -2937,7 +2961,7 @@ h2 {
   font-size: 26px;
   font-size: 1.625rem;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h2 {
     font-size: 20px;
     font-size: 1.25rem;
@@ -2965,7 +2989,7 @@ h3 {
   font-size: 22px;
   font-size: 1.375rem;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h3 {
     font-size: 18px;
     font-size: 1.125rem;
@@ -2999,19 +3023,19 @@ a {
   text-decoration: none;
 }
 p {
-  color: #58595b;
+  color: #7d7d8e;
   margin: 0 0 10px;
   line-height: 1.7;
 }
 p.emphasized {
   font-size: 18px;
   font-size: 1.125rem;
-  color: #58595b;
+  color: #7d7d8e;
   margin: 15px 0;
 }
 p a {
   border-bottom: 1px solid #bbb;
-  color: #58595b;
+  color: #7d7d8e;
 }
 ol,
 ul {
@@ -3023,7 +3047,7 @@ li {
   display: block;
   line-height: 1.5;
   margin: 5px 0 0;
-  color: #58595b;
+  color: #7d7d8e;
 }
 li:before {
   width: 5px;
@@ -3105,13 +3129,13 @@ form input[type=text]:focus,
 form input[type=email]:focus,
 form input[type=password]:focus,
 form textarea:focus {
-  border: 1px solid #58595b;
+  border: 1px solid #7d7d8e;
 }
 .alert {
   font-size: 15px;
   font-size: 0.9375rem;
   background: #e7e7ec;
-  color: #58595b;
+  color: #7d7d8e;
   display: block;
   margin: 0 0 10px 0;
   font-weight: 400;
@@ -3142,7 +3166,7 @@ body {
 .type-title {
   font-family: "futura-pt", sans-serif;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .type-title {
     font-size: 24px;
   }
@@ -3261,10 +3285,10 @@ body {
 }
 .btn.btn-primary {
   color: #ffffff;
-  background: #58595b;
+  background: #7d7d8e;
 }
 .btn.btn-primary:hover {
-  background: #3f4041;
+  background: #646474;
 }
 .btn.btn-danger {
   color: #ffffff;
@@ -3283,4 +3307,529 @@ body {
   color: #74c080;
   background: none;
   box-shadow: inset 0 0 0 1px #74c080;
+}
+#menuBtn {
+  width: 30px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+}
+#menuBtn > span {
+  display: block;
+  height: 21px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+#menuBtn > span span {
+  background: #cbcbd2;
+  width: 100%;
+  text-indent: -9999px;
+  display: block;
+  height: 2px;
+  margin-bottom: 5px;
+}
+#modal-nav {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 30px;
+  -webkit-transition: 300ms ease;
+          transition: 300ms ease;
+  z-index: 999;
+}
+#modal-nav nav a {
+  display: block;
+  font-size: 48px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 200;
+  opacity: 1;
+  line-height: 1;
+}
+#modal-nav nav.fs-swap-active a {
+  color: red;
+}
+#modal-nav.nav-target {
+  z-index: 9999;
+  background: none;
+}
+#modal-nav.nav-target.fs-swap-active {
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.75);
+}
+#modal-nav.nav-target.fs-swap-active nav {
+  pointer-events: auto;
+}
+body,
+html {
+  height: 100%;
+}
+.splash {
+  background: #3f3f44;
+  color: #ffffff;
+  height: 100%;
+}
+.splash .wrapper,
+.splash #splash--wrapper {
+  height: 100%;
+  position: relative;
+}
+.splash a {
+  color: #ffffff;
+}
+.splash #head {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  z-index: 99;
+}
+@media screen and (min-width: 500px) {
+  .splash #head nav a {
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    padding: 0 3px;
+    border: none;
+  }
+}
+@media screen and (min-width: 740px) {
+  .splash #head nav a {
+    font-weight: 600;
+    padding: 0 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+.splash #head nav a:hover {
+  color: #ffffff;
+}
+.splash #head nav a:last-child {
+  border-right: none;
+}
+.splash .absolute-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 99;
+}
+.splash #splash--wrapper.blurred #splash--meta {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+.splash #splash--video-overlay {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.5);
+}
+.splash #splash--video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 49;
+  background-size: cover;
+}
+.splash #splash--video video {
+  background-size: cover;
+}
+@media screen and (min-width: 500px) {
+  .splash #splash--video {
+    background: url(/assets/img/lamm-bg-iphone.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .splash #splash--video video {
+    display: none;
+  }
+}
+@media screen and (min-width: 740px) {
+  .splash #splash--video {
+    background: url(/assets/img/lamm-bg-iphone.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .splash #splash--video video {
+    display: none;
+  }
+}
+@media screen and (min-width: 980px) {
+  .splash #splash--video {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .splash #splash--video video {
+    display: block;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .splash #splash--video {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .splash #splash--video video {
+    display: block;
+  }
+}
+.splash #splash--meta {
+  -webkit-transition: 300ms ease;
+          transition: 300ms ease;
+}
+@media screen and (min-width: 500px) {
+  .splash #splash--meta {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 740px) {
+  .splash #splash--meta {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 980px) {
+  .splash #splash--meta {
+    width: 800px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .splash #splash--meta {
+    width: 800px;
+  }
+}
+.splash #splash--meta h4 {
+  font-weight: 200;
+}
+@media screen and (min-width: 500px) {
+  .splash #splash--meta h4 {
+    font-size: 24px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  .splash #splash--meta h4 {
+    font-size: 32px;
+    margin: 10px 0 0;
+  }
+}
+.splash #splash--meta p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.75);
+}
+@media screen and (min-width: 500px) {
+  .splash #splash--meta p {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .splash #splash--meta p {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .splash #splash--meta p {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .splash #splash--meta p {
+    font-size: 24px;
+  }
+}
+.splash #splash--meta h1 {
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 80px;
+  height: 80px;
+  z-index: 100;
+  text-indent: -99999px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 500px) {
+  .splash #splash--meta h1 {
+    width: 90%;
+    background-image: url(/assets/img/lamm-3x.png);
+    background-size: contain;
+    height: 60px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .splash #splash--meta h1 {
+    width: 90%;
+    background-image: url(/assets/img/lamm-4x.png);
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 980px) {
+  .splash #splash--meta h1 {
+    background-image: url(/assets/img/lamm-3x.png);
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .splash #splash--meta h1 {
+    background-image: url(/assets/img/lamm-3x.png);
+    background-size: contain;
+  }
+}
+.splash #splash--handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  color: #ffffff;
+}
+#splash--signup {
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  margin: auto;
+  display: block;
+}
+@media screen and (min-width: 500px) {
+  #splash--signup {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 740px) {
+  #splash--signup {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 980px) {
+  #splash--signup {
+    width: 600px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  #splash--signup {
+    width: 600px;
+  }
+}
+#splash--signup input {
+  color: #3f3f44;
+}
+#splash--signup .wrapper {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 25px;
+  padding-top: 0px;
+}
+#splash--signup .wrapper:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#splash--signup .mfp-close {
+  color: #ffffff;
+}
+#splash--signup h3 {
+  color: #ffffff;
+  margin: 0;
+  padding: 15px 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+#splash--signup form {
+  color: #ffffff;
+}
+#splash--signup form p {
+  color: #ffffff;
+}
+#splash--signup form label {
+  color: rgba(0, 0, 0, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 12px;
+  display: none;
+}
+#splash--signup form .email {
+  text-align: center;
+  width: 75%;
+  float: left;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#splash--signup form .btn.epm-submit-chimp {
+  margin-bottom: 0;
+  width: 24%;
+  float: right;
+  height: 39px;
+  line-height: 39px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+#splash--signup form .btn.epm-submit-chimp:hover {
+  color: #ffffff;
+  background: none;
+}
+.mfp-ready.content-page,
+#about {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+}
+.mfp-ready.content-page .mfp-close,
+#about .mfp-close {
+  color: #ffffff;
+}
+.mfp-ready.content-page #content,
+#about #content {
+  text-align: center;
+  line-height: 1.5;
+}
+@media screen and (min-width: 500px) {
+  .mfp-ready.content-page #content,
+  #about #content {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .mfp-ready.content-page #content,
+  #about #content {
+    font-size: 24px;
+  }
+}
+.mfp-ready.content-page #content p,
+#about #content p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: inherit;
+}
+.vjs-control-bar {
+  display: none;
+}
+#brands {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+@media screen and (min-width: 500px) {
+  #brands {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 980px) {
+  #brands {
+    margin-top: 60px;
+  }
+}
+#brands .brand {
+  height: 50px;
+  line-height: 50px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+@media screen and (min-width: 500px) {
+  #brands .brand {
+    border-right: none;
+  }
+}
+@media screen and (min-width: 980px) {
+  #brands .brand {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+  }
+}
+#quotes {
+  font-family: 'PT Serif', serif;
+}
+@media screen and (min-width: 500px) {
+  #quotes {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 980px) {
+  #quotes {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 19px;
+  }
+}
+#quotes .quote {
+  padding: 0 25px;
+}
+#home--slider {
+  background: #e7e7ec;
+}
+@media screen and (min-width: 500px) {
+  #home--slider {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 740px) {
+  #home--slider {
+    height: 450px;
+  }
+}
+@media screen and (min-width: 980px) {
+  #home--slider {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1220px) {
+  #home--slider {
+    height: 400px;
+  }
+}
+#home--mission {
+  background: #ffffff;
+}
+#splash--added {
+  position: fixed;
+  height: 100%;
+  background: #ffffff;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  -webkit-transition: 300ms ease;
+          transition: 300ms ease;
+  -webkit-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+}
+@media screen and (min-width: 300px) {
+  #splash--added {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 980px) {
+  #splash--added {
+    width: 60%;
+  }
+}
+#splash--added .close {
+  color: #3f3f44;
+  display: block;
+  text-align: left;
+  padding: 25px;
+}
+#splash--added.fs-swap-active {
+  -webkit-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
 }

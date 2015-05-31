@@ -214,7 +214,7 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// get posts grouped by post type
-		$groups = acf_get_grouped_posts( $args );
+		$groups = acf_get_posts( $args );
 		
 		if( !empty($groups) ) {
 			
@@ -385,62 +385,50 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// get selected post ID's
-		$post__in = array();
+		$post_ids = array();
 		
-		foreach( array_keys($value) as $k ) {
+		foreach( $value as $v ) {
 			
-			if( is_numeric($value[ $k ]) ) {
+			if( is_numeric($v) ) {
 				
-				// convert to int
-				$value[ $k ] = intval($value[ $k ]);
-				
-				
-				// append to $post__in
-				$post__in[] = $value[ $k ];
+				$post_ids[] = intval($v);
 				
 			}
 			
 		}
 		
 		
-		// bail early if no posts
-		if( empty($post__in) ) {
+		// load posts in 1 query to save multiple DB calls from following code
+		if( count($post_ids) > 1 ) {
 			
-			return $value;
+			get_posts(array(
+				'posts_per_page'	=> -1,
+				'post_type'			=> acf_get_post_types(),
+				'post_status'		=> 'any',
+				'post__in'			=> $post_ids,
+			));
 			
 		}
 		
 		
-		// get posts
-		$posts = acf_get_posts(array(
-			'post__in' => $post__in,
-		));
+		// vars
+		$posts = array();
 		
 		
-		// override value with post
-		$return = array();
-		
-		
-		// append to $return
-		foreach( $value as $k => $v ) {
+		// update value to include $post
+		foreach( $value as $v ) {
 			
 			if( is_numeric($v) ) {
-				
-				// find matching $post
-				foreach( $posts as $post ) {
+			
+				if( $post = get_post( $v ) ) {
 					
-					if( $post->ID == $v ) {
-						
-						$return[] = $post;
-						break;
-						
-					}
+					$posts[] = $post;
 					
 				}
 				
 			} else {
 				
-				$return[] = $v;
+				$posts[] = $v;
 				
 			}
 			
@@ -448,8 +436,7 @@ class acf_field_page_link extends acf_field {
 		
 		
 		// return
-		return $return;
-		
+		return $posts;
 	}
 	
 	
@@ -553,7 +540,7 @@ class acf_field_page_link extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All taxonomies",'acf'),
+			'placeholder'	=> __("No taxonomy filter",'acf'),
 		));
 		
 		

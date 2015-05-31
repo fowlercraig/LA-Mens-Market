@@ -39,20 +39,4 @@
 
 <body <?php body_class('fs-grid splash'); ?>>
   <div class="wrapper">
-    <header id="head" class="main-nav">
-      <div class="fs-row">
-        <?php
-          $menuParameters = array(
-            'container'       => false,
-            'echo'            => false,
-            'items_wrap'      => '%3$s',
-            'theme_location'  => 'main-menu',
-            'walker'          => new MV_Cleaner_Walker_Nav_Menu(),
-            'depth'           => 0,
-          );
-        ?>
-        <nav id="primary-nav" class="fs-cell fs-lg-10 fs-md-6 fs-sm-3 fs-centered text-center">
-          <div><?php echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' ); ?></div>
-        </nav>
-      </div>
-    </header>
+    <?php include locate_template('parts/navmodal.php' ); ?>

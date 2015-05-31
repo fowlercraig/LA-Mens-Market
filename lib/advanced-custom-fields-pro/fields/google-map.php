@@ -190,10 +190,7 @@ class acf_field_google_map extends acf_field {
 			'type'			=> 'text',
 			'name'			=> 'center_lng',
 			'prepend'		=> 'lng',
-			'placeholder'	=> $this->default_values['center_lng'],
-			'wrapper'		=> array(
-				'data-append' => 'center_lat'
-			)
+			'placeholder'	=> $this->default_values['center_lng']
 		));
 		
 		
