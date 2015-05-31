@@ -31,7 +31,7 @@ function navOut(){
 
 var $menu = $(".toggle");
 
-$(".toggle").swap();
+//$(".toggle").swap();
 
 $("#menuBtn").on("activate.swap", function(){
   navIn();

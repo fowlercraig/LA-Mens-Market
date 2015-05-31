@@ -2813,7 +2813,7 @@
 		},
 	"\/src\/bower_components\/formstone\/dist\/js\/asap.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/bower_components\/formstone\/dist\/js\/asap.js",
 		"outputAbbreviatedPath": "\/src\/bower_components\/formstone\/dist\/js\/min\/asap-min.js",
@@ -2857,7 +2857,7 @@
 		},
 	"\/src\/bower_components\/formstone\/dist\/js\/cookie.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/bower_components\/formstone\/dist\/js\/cookie.js",
 		"outputAbbreviatedPath": "\/src\/bower_components\/formstone\/dist\/js\/min\/cookie-min.js",
@@ -17461,6 +17461,28 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/src\/js\/_navtransition.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/js\/_navtransition.js",
+		"outputAbbreviatedPath": "\/src\/js\/min\/_navtransition-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/src\/js\/_pronto.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/js\/_pronto.js",
+		"outputAbbreviatedPath": "\/src\/js\/min\/_pronto-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/src\/js\/_scripts.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -17655,6 +17677,26 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/less\/_page-home.less",
 		"outputAbbreviatedPath": "\/src\/css\/_page-home.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"\/src\/less\/_page-loadins.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/less\/_page-loadins.less",
+		"outputAbbreviatedPath": "\/src\/css\/_page-loadins.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

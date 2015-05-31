@@ -7,8 +7,8 @@
 // @codekit-prepend "../bower_components/formstone/dist/js/mediaquery.js"
 // @codekit-prepend "../bower_components/formstone/dist/js/swap.js"
 // @codekit-prepend "../bower_components/formstone/dist/js/navigation.js"
-// @codekit-prepend "../bower_components/formstone/dist/js/cookie.js"
 // @codekit-prepend "../bower_components/formstone/dist/js/carousel.js"
+// @codekit-prepend "../bower_components/formstone/dist/js/asap.js"
 
 // Other Plugins
 

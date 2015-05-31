@@ -2937,7 +2937,7 @@ h1 {
   font-size: 3.125rem;
   line-height: 1;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h1 {
     font-size: 24px;
   }
@@ -2961,7 +2961,7 @@ h2 {
   font-size: 26px;
   font-size: 1.625rem;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h2 {
     font-size: 20px;
     font-size: 1.25rem;
@@ -2989,7 +2989,7 @@ h3 {
   font-size: 22px;
   font-size: 1.375rem;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   h3 {
     font-size: 18px;
     font-size: 1.125rem;
@@ -3166,7 +3166,7 @@ body {
 .type-title {
   font-family: "futura-pt", sans-serif;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .type-title {
     font-size: 24px;
   }
@@ -3394,7 +3394,7 @@ html {
   line-height: 50px;
   z-index: 99;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #head nav a {
     font-size: 9px;
     letter-spacing: 1px;
@@ -3453,7 +3453,7 @@ html {
 .splash #splash--video video {
   background-size: cover;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #splash--video {
     background: url(/assets/img/lamm-bg-iphone.jpg) center center no-repeat;
     background-size: cover;
@@ -3491,7 +3491,7 @@ html {
   -webkit-transition: 300ms ease;
           transition: 300ms ease;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #splash--meta {
     width: 100%;
   }
@@ -3514,7 +3514,7 @@ html {
 .splash #splash--meta h4 {
   font-weight: 200;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #splash--meta h4 {
     font-size: 24px;
     margin: 0;
@@ -3532,7 +3532,7 @@ html {
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.75);
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #splash--meta p {
     font-size: 14px;
   }
@@ -3563,7 +3563,7 @@ html {
   background-position: center center;
   background-repeat: no-repeat;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .splash #splash--meta h1 {
     width: 90%;
     background-image: url(/assets/img/lamm-3x.png);
@@ -3603,7 +3603,7 @@ html {
   margin: auto;
   display: block;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   #splash--signup {
     width: 90%;
   }
@@ -3700,7 +3700,7 @@ html {
   text-align: center;
   line-height: 1.5;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   .mfp-ready.content-page #content,
   #about #content {
     font-size: 16px;
@@ -3726,7 +3726,7 @@ html {
   font-size: 14px;
   letter-spacing: 2px;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   #brands {
     margin-top: 20px;
   }
@@ -3742,7 +3742,7 @@ html {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   #brands .brand {
     border-right: none;
   }
@@ -3755,7 +3755,7 @@ html {
 #quotes {
   font-family: 'PT Serif', serif;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   #quotes {
     border-top: 1px solid rgba(255, 255, 255, 0.25);
     margin-top: 20px;
@@ -3778,7 +3778,7 @@ html {
 #home--slider {
   background: #e7e7ec;
 }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   #home--slider {
     height: 300px;
   }
@@ -3800,4 +3800,38 @@ html {
 }
 #home--mission {
   background: #ffffff;
+}
+#splash--added {
+  position: fixed;
+  height: 100%;
+  background: #ffffff;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  -webkit-transition: 300ms ease;
+          transition: 300ms ease;
+  -webkit-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+}
+@media screen and (min-width: 300px) {
+  #splash--added {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 980px) {
+  #splash--added {
+    width: 60%;
+  }
+}
+#splash--added .close {
+  color: #3f3f44;
+  display: block;
+  text-align: left;
+  padding: 25px;
+}
+#splash--added.fs-swap-active {
+  -webkit-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
 }

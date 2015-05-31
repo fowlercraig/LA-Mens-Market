@@ -23,8 +23,10 @@
   </div>
   <nav class="fs-row nav-target">
     <div class='fs-cell fs-lg-8 fs-md-6 fs-sm-3'>
-      <?php echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' ); ?>
-      <a class="toggle boom" data-swap-target=".nav-target">Boom</a>
+      <a href="/brands"  class="" data-swap-target=".added-content">Brands</a>
+      <a href="/about"   class="" data-swap-target=".added-content">About</a>
+      <a href="/press"   class="" data-swap-target=".added-content">Press</a>
+      <a href="/contact" class="toggle nav-link" data-swap-target=".added-content">Contact</a>
     </div>
   </nav>
 </div>

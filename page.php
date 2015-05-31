@@ -1,7 +1,5 @@
 <?php Themewrangler::setup_page();get_header(); ?>
 
-<META http-equiv="refresh" content="0;URL=/">
-
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div id="content" class="fs-grid fullscreen">
   <div class="fs-row">
